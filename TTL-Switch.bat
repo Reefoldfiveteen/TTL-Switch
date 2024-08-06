@@ -42,7 +42,7 @@ if not "%1"=="am_admin" (
 	echo.
 
 	:: Get user input
-	CHOICE /C:1234
+	CHOICE /C:123
 	echo.
 
 	if errorlevel 1 set M=1
@@ -50,7 +50,7 @@ if not "%1"=="am_admin" (
 	if errorlevel 3 set M=3
 	if %M%==1 goto BYPASS
 	if %M%==2 goto DEFAULT
-	if %M%==3 goto EOF
+	if %M%==3 goto EOFA
  exit /b
 
 :: TTL set to 65 (bypass) & back to menu
@@ -117,3 +117,6 @@ if not "%1"=="am_admin" (
     
     	:EOF
     	goto MENU
+
+:EOFA
+exit /b
